@@ -2,4 +2,4 @@ An example of a full CI/CD workflow
 
 github
 jenkins
-id 00006
+id 00007
