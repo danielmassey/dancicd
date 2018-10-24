@@ -6,4 +6,8 @@ jenkins build docker container and publish to repo
 
 github
 jenkins
-id 00022
+static website hosted put on s3 and return URL
+go API container (get, put)
+
+test form submit
+test info get
