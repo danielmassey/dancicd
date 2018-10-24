@@ -7,7 +7,6 @@ pipeline {
     stages {
         stage('web_build') {
             steps {
-                sh 'echo $(ls -al ~/)'
                 sh 'echo "`date` dancicd $BRANCH_NAME $BUILD_NUMBER" >> /var/lib/jenkins/logs/dancicd_jenkins_web_build.log'
                 sh '"$WORKSPACE/scripts/web_build.sh"'
             }
