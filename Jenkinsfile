@@ -17,6 +17,12 @@ pipeline {
                 sh '"$WORKSPACE/jenkins/scripts/web_deploy.sh" dancicdtest-${BRANCH_NAME}${BUILD_NUMBER}'
             }
         }
+        stage('app_build') {
+            steps {
+                sh 'echo "`date` dancicd $BRANCH_NAME $BUILD_NUMBER " >> /var/lib/jenkins/logs/dancicd_jenkins_app_build.log'
+                sh '"$WORKSPACE/jenkins/scripts/app_build.sh" dancicdtest-${BRANCH_NAME}${BUILD_NUMBER}'
+            }
+        }
         stage('test') {
             steps {
                 sh 'echo "`date` dancicd $BRANCH_NAME $BUILD_NUMBER " >> /var/lib/jenkins/logs/dancicd_jenkins_test.log'
